@@ -1,0 +1,3 @@
+[smtp.gmail.com]:587    your-gmail-username@gmail.com:your-gmail-app-password
+[smtp-mail.outlook.com]:587    your-outlook-username@outlook.com:your-outlook-password
+[smtp.mail.yahoo.com]:587    your-yahoo-username@yahoo.com:your-yahoo-password
