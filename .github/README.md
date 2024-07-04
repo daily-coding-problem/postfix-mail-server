@@ -1,5 +1,8 @@
 # Postfix Mail Server
 
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white)
+![Linux](https://img.shields.io/badge/-Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+
 This project sets up a Postfix mail server using Docker. The mail server can be used by other services to send emails.
 
 ## Features
