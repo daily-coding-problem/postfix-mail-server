@@ -3,13 +3,13 @@
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=Docker&logoColor=white)
 ![Linux](https://img.shields.io/badge/-Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
-This project sets up a Postfix mail server using Docker. The mail server can be used by other services to send emails.
+This project sets up a Postfix mail server using Docker and [mailtrap](https://mailtrap.io). The mail server can be used by other services to send emails.
 
 ## Features
 
 - Lightweight Postfix mail server in a Docker container.
 - Configurable via `main.cf`.
-- Supports email routing.
+- Supports email routing using [mailtrap](https://mailtrap.io).
 - Routes to all major email providers (`@outlook`, `@gmail`, `@yahoo`, etc.)
 
 ## Prerequisites
@@ -30,9 +30,7 @@ cd postfix-mail-server
 
 ### 2. Create `postfix/sasl_passwd`
 
-Create the [`postfix/sasl_passwd`](/postfix/sasl_passwd) file with your credentials for each SMTP server.
-
-**Note**: For services with two-factor authentication, use an App Password instead of your regular password.
+Create the [`postfix/sasl_passwd`](/postfix/sasl_passwd) file with your credentials from [mailtrap](https://mailtrap.io).
 
 ### 3. Build the Docker Image
 

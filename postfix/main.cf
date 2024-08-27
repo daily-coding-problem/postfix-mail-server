@@ -2,30 +2,19 @@
 smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
 biff = no
 append_dot_mydomain = no
-smtpd_use_tls=yes
+smtpd_use_tls = yes
 
 # TLS parameters
-smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
-smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
-smtpd_tls_security_level=may
-smtp_tls_security_level=may
-smtpd_tls_auth_only = no
-smtp_use_tls = yes
+smtp_tls_security_level = may
 smtp_tls_note_starttls_offer = yes
-smtpd_tls_loglevel = 1
-smtpd_tls_received_header = yes
-
-# Relay host configuration
-relayhost =
-
-# Per-domain relay settings
-sender_dependent_relayhost_maps = hash:/etc/postfix/sender_relay
-smtp_sender_dependent_authentication = yes
-smtp_sasl_auth_enable = yes
-smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-smtp_sasl_security_options = noanonymous
-smtp_sasl_tls_security_options = noanonymous
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+
+# Relay host configuration for Mailtrap
+relayhost = [sandbox.smtp.mailtrap.io]:2525
+smtp_sasl_auth_enable = yes
+smtp_sasl_mechanism_filter = plain
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 
 # General settings
 myhostname = localhost
